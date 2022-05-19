@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B15508C12836657F00BF6357 /* ArticleUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15508C02836657F00BF6357 /* ArticleUIModel.swift */; };
+		B15508C428366B4C00BF6357 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15508C328366B4C00BF6357 /* UIImageViewExtensions.swift */; };
 		B17E02152832FB2200A5210A /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E02142832FB2200A5210A /* HomeTableViewCell.swift */; };
 		B1F64838282D8F2A00FC750F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F64837282D8F2A00FC750F /* AppDelegate.swift */; };
 		B1F6483A282D8F2A00FC750F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F64839282D8F2A00FC750F /* SceneDelegate.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B15508C02836657F00BF6357 /* ArticleUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleUIModel.swift; sourceTree = "<group>"; };
+		B15508C328366B4C00BF6357 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		B17E02142832FB2200A5210A /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		B1F64834282D8F2A00FC750F /* PixelsNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixelsNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1F64837282D8F2A00FC750F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B15508C228366B3600BF6357 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B15508C328366B4C00BF6357 /* UIImageViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B1F6482B282D8F2A00FC750F = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +84,7 @@
 		B1F64836282D8F2A00FC750F /* PixelsNews */ = {
 			isa = PBXGroup;
 			children = (
+				B15508C228366B3600BF6357 /* Extensions */,
 				B1F64854282D996A00FC750F /* Controllers */,
 				B1F64851282D95A100FC750F /* Config */,
 				B1F6484E282D8F3E00FC750F /* Data */,
@@ -88,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				B1F6484F282D92F000FC750F /* BaseResponse.swift */,
+				B15508C02836657F00BF6357 /* ArticleUIModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -192,7 +206,9 @@
 				B1F6485D282D9D8D00FC750F /* DetailsViewController.swift in Sources */,
 				B1F6485A282D9D4600FC750F /* SearchViewController.swift in Sources */,
 				B17E02152832FB2200A5210A /* HomeTableViewCell.swift in Sources */,
+				B15508C428366B4C00BF6357 /* UIImageViewExtensions.swift in Sources */,
 				B1F64842282D8F2A00FC750F /* PixelsNews.xcdatamodeld in Sources */,
+				B15508C12836657F00BF6357 /* ArticleUIModel.swift in Sources */,
 				B1F64838282D8F2A00FC750F /* AppDelegate.swift in Sources */,
 				B1F6483A282D8F2A00FC750F /* SceneDelegate.swift in Sources */,
 				B1F64856282D9B8600FC750F /* HomeViewController.swift in Sources */,

@@ -8,50 +8,44 @@
 import UIKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    
-    var titleArr = [String?]()
-    var urlToImageArr = [String?]()
-    var descriptionArr = [String?]()
-    
-    var selectedTitle : String?
-    var selectedImage : String?
-    var selectedDescription : String?
-    
-    
     
     
     @IBOutlet weak var tableView: UITableView!
     
     
+    var articleList = [ArticleResponse]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
         
         loadData()
-        
-        
-        
+    
     }
     
     /* ------------- TableView ------------- */
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return titleArr.count
+        return articleList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HomeTableViewCell
         
-        cell.cellTitle.text = titleArr[indexPath.row]
+        let row = articleList[indexPath.row]
         
-        let imageUrl = urlToImageArr[indexPath.row] ?? "PixelsLogo" // image gelmezse
+
+        //Title
+        cell.cellTitle.text = row.title
+        
+        //Image
+        let imageUrl = row.urlToImage ?? "PixelsLogo" // image gelmezse
         cell.cellImage.load(url: URL(string: imageUrl)!)//load -> extension
         
         return cell
@@ -59,11 +53,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        selectedTitle = titleArr[indexPath.row]
-        selectedImage = urlToImageArr[indexPath.row]
-        selectedDescription = descriptionArr[indexPath.row]
+        let selectedArticle = articleList[indexPath.row]
         
-        performSegue(withIdentifier: "toDetailsVC", sender: selectedTitle)
+        performSegue(withIdentifier: "toDetailsVC", sender: selectedArticle)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -72,12 +64,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             let destinationVC = segue.destination as! DetailsViewController
             
-            destinationVC.incomingTitle = selectedTitle
-            destinationVC.incomingImage = selectedImage
-            destinationVC.incomingDescription = selectedDescription
+            let article = sender as! ArticleResponse
             
             
-        
+            let artictleUIModel = ArticleUIModel(
+                author: article.author,
+                title: article.title,
+                description: article.description,
+                url: article.url,
+                urlToImage: article.urlToImage,
+                publishedAt: article.publishedAt,
+                content: article.content
+            )
+            
+            destinationVC.article = artictleUIModel
+            
             
         }
        
@@ -86,10 +87,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     /* ------------- M E T H O D S ------------- */
     
     func loadData() {
-        
-        
-        titleArr = []
-        urlToImageArr = []
         
         
         let jsonUrl = "https://newsapi.org/v2/top-headlines?country=tr&apiKey=\(Config.API_KEY)"
@@ -106,13 +103,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             do {
                 let baseResponse = try JSONDecoder().decode(BaseResponse.self, from: data)
                 
-                
-                for elements in baseResponse.articles {
-                    self.titleArr.append(elements.title)
-                    self.urlToImageArr.append(elements.urlToImage)
-                    self.descriptionArr.append(elements.description)
-                    
-                }
+                self.articleList = baseResponse.articles
                 
                 DispatchQueue.main.async {
                     
@@ -128,23 +119,4 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
 }
-
-/* jsondan url olarak gelen resmi image a çevirmek için */
-
-extension UIImageView {
-    
-    func load(url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
-                }
-            }
-        }
-    }
-    
-}
-
 

@@ -17,21 +17,21 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     
     
-    var incomingTitle : String?
-    var incomingImage : String?
-    var incomingDescription : String?
-    
+    var article = ArticleUIModel()
+
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         titleLabel.adjustsFontSizeToFitWidth = true  // dene ! gelen yazı ile aynı boyutta olması için
         
+        
         // Do any additional setup after loading the view.
         
-        titleLabel.text = incomingTitle
-        imageView.load(url: URL(string: incomingImage ?? "PixelsLogo")!)
-        descriptionTextView.text = incomingDescription
+        titleLabel.text = article.title
+        imageView.load(url: URL(string: article.urlToImage ?? "PixelsLogo")!)
+        descriptionTextView.text = article.description
         
         
         

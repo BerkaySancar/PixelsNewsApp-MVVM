@@ -34,3 +34,9 @@ struct SourceResponse: Decodable {
     let name: String?
     
 }
+
+struct Test {
+    let name: String?
+    
+    
+}
