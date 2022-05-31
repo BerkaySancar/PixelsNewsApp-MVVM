@@ -23,7 +23,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
-        loadData()
+        loadJSONData()
+        
+        
     
     }
     
@@ -55,14 +57,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let selectedArticle = articleList[indexPath.row]
         
-        performSegue(withIdentifier: "toDetailsVC", sender: selectedArticle)
+        performSegue(withIdentifier: "toWebVC", sender: selectedArticle)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "toDetailsVC" {
+        if segue.identifier == "toWebVC" {
             
-            let destinationVC = segue.destination as! DetailsViewController
+            let destinationVC = segue.destination as! WebViewController
             
             let article = sender as! ArticleResponse
             
@@ -86,7 +88,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     /* ------------- M E T H O D S ------------- */
     
-    func loadData() {
+    func loadJSONData() {
         
         
         let jsonUrl = "https://newsapi.org/v2/top-headlines?country=tr&apiKey=\(Config.API_KEY)"

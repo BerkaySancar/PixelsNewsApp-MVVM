@@ -20,6 +20,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
 
         // Do any additional setup after loading the view.
         searchController.delegate = self
+        
     
     }
    
