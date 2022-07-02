@@ -9,25 +9,17 @@ import UIKit
 
 class SearchViewController: UIViewController, UISearchBarDelegate {
    
-    
-
-    
     @IBOutlet weak var searchController: UISearchBar!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        searchController.delegate = self
         
-    
+        searchController.delegate = self
     }
    
     
     //search bar için kullanılacak func.
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         
     }
   

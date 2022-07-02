@@ -13,5 +13,4 @@ struct AppColor {
     
    static let pixelsColor = UIColor(named: "PixelsColor")
     
-    
 }

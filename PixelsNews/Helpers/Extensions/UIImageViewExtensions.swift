@@ -1,10 +1,3 @@
-//
-//  UIImageViewExtensions.swift
-//  PixelsNews
-//
-//  Created by Berkay Sancar on 19.05.2022.
-//
-
 import UIKit
 
 extension UIImageView {
@@ -20,5 +13,4 @@ extension UIImageView {
             }
         }
     }
-    
 }
