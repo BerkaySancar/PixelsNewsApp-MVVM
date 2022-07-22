@@ -15,9 +15,8 @@ final class WebViewController: UIViewController, WKNavigationDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        let urlString = upcomingURL
-        let url = URL(string: urlString)
-        let request = URLRequest(url: url!)
+        guard let url = URL(string: upcomingURL) else {return}
+        let request = URLRequest(url: url)
         
         webView.load(request)
     }

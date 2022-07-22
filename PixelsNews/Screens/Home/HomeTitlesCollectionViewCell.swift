@@ -2,6 +2,6 @@ import UIKit
 
 class HomeTitlesCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var titleLabel: UILabel!
-    
+    @IBOutlet weak var titleButton: UIButton!
+
 }

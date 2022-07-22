@@ -5,7 +5,6 @@ struct BaseResponse: Codable {
     let status: String
     let totalResults: Int
     let articles: [Article]
-    
 }
 
 struct Article: Codable {
