@@ -87,4 +87,8 @@ fastlane/test_output
 # After new code Injection tools there's a generated folder /iOSInjectionProject
 # https://github.com/johnno1962/injectionforxcode
 
+<<<<<<< HEAD
 iOSInjectionProject/
+=======
+iOSInjectionProject/
+>>>>>>> 50219a376182e308e6b562aa1ebf365a8a89e3c0
