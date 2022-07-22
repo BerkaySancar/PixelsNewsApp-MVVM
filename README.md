@@ -27,6 +27,10 @@ In this app, you can see latest news, list news by topics and search news.
 <img width="158" alt="NewsDetailWebView" src="https://user-images.githubusercontent.com/97171726/180485015-1bc77bb9-747c-45ae-b5d8-9b4e3281764b.png"><img width="158" alt="SearchScreen" src="https://user-images.githubusercontent.com/97171726/180469034-bc122b61-43ad-4c45-9ab5-d6a10bcf5868.png"><img width="158" alt="DarkMode" src="https://user-images.githubusercontent.com/97171726/180471580-d569be17-03bb-45aa-a658-31cb57214e30.png"><img width="158" alt="DarkMode2" src="https://user-images.githubusercontent.com/97171726/180471615-2c43da5d-2de5-4292-a86c-b309c0ad89b1.png">
 
 # Screen Records
+## Launch Screnn & Select Topic Screen
+
+https://user-images.githubusercontent.com/97171726/180518804-a0370e3e-ffc1-4eb2-b8ad-85445165902f.mov
+
 ## Home Screen
 https://user-images.githubusercontent.com/97171726/180503110-201e95f8-a357-42ba-b3ea-74cb58a1ce4f.mov
 ## Search Screnn
