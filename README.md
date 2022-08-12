@@ -6,7 +6,7 @@ In this app, you can see latest news, list news by topics and search news.
 
 ## Features
 
-- Swift UIKit
+- Swift with UiKit
 - Storyboard
 - UserDefaults
 - WebView
